@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Row = ({ title, movies }: Props) => {
-  const movieRowRef = useRef<HTMLDivElement>()
+  const movieRowRef = useRef<HTMLDivElement>(null)
   const [moved, setMoved] = useState(false)
   const clickHandler = (direction: string) => {
     setMoved(true)
@@ -34,7 +34,9 @@ const Row = ({ title, movies }: Props) => {
       <div className="group relative md:-ml-2  ">
         <ChevronLeftIcon
           onClick={() => clickHandler('left')}
-          className={`absolute top-0 left-2 bottom-0 z-40 m-auto  h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!moved&& "hidden"}`}
+          className={`absolute top-0 left-2 bottom-0 z-40 m-auto  h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${
+            !moved && 'hidden'
+          }`}
         />
         <div
           ref={movieRowRef}
