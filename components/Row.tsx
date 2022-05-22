@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Row = ({ title, movies }: Props) => {
-  const movieRowRef = useRef<HTMLDivElement>()
+  const movieRowRef = useRef<HTMLDivElement>(null)
   const [moved, setMoved] = useState(false)
   const clickHandler = (direction: string) => {
     setMoved(true)
